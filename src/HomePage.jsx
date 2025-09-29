@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Play,
@@ -122,6 +122,86 @@ const Pill = ({ children }) => (
   </span>
 );
 
+function HeaderBar() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
+
+  const NavLinks = ({ onClick }) => (
+    <nav className="gap-6 text-sky-800/90 md:flex">
+      <a className="block py-2 hover:text-sky-900" href="#services" onClick={onClick}>服務項目</a>
+      <a className="block py-2 hover:text-sky-900" href="#events" onClick={onClick}>活動紀錄</a>
+      <a className="block py-2 hover:text-sky-900" href="#hosts" onClick={onClick}>主持群</a>
+      <a className="block py-2 hover:text-sky-900" href="#contact" onClick={onClick}>聯絡我們</a>
+    </nav>
+  );
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-sky-100/60 bg-white/80 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
+        <a href="#home" className="flex items-center gap-3">
+          <span className="grid w-12 place-items-center overflow-hidden rounded-xl">
+            <img src="assets/logo.png" alt="海洋家族 logo" className="h-10 w-10 object-contain" />
+          </span>
+          <span className="text-lg font-extrabold tracking-tight text-sky-900">海洋家族</span>
+        </a>
+
+        {/* desktop */}
+        <div className="hidden md:block">
+          <NavLinks />
+        </div>
+
+        {/* mobile button */}
+        <button
+          type="button"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-sky-900 hover:bg-sky-50 focus-visible:ring-2 focus-visible:ring-sky-400 md:hidden"
+          aria-label="開啟主選單"
+          aria-expanded={open}
+          onClick={() => setOpen(true)}
+        >
+          <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden><path fill="currentColor" d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z"/></svg>
+        </button>
+      </div>
+
+      {/* mobile menu */}
+      <div className={`md:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`} aria-hidden={!open}>
+        <div className={`fixed inset-0 z-40 bg-black/20 transition-opacity ${open ? "opacity-100" : "opacity-0"}`} onClick={() => setOpen(false)} />
+        <div className={`fixed left-0 right-0 top-0 z-50 origin-top rounded-b-2xl border-b border-sky-100/60 bg-white/95 backdrop-blur transition-transform duration-200 ${open ? "translate-y-0" : "-translate-y-full"}`}>
+          <div className="mx-auto max-w-6xl px-4 py-3">
+            <div className="flex items-center justify-between">
+              <a href="#home" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+                <span className="grid w-10 place-items-center overflow-hidden rounded-lg">
+                  <img src="assets/logo.png" alt="海洋家族 logo" className="h-8 w-8 object-contain" />
+                </span>
+                <span className="text-base font-extrabold tracking-tight text-sky-900">海洋家族</span>
+              </a>
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-lg p-2 text-sky-900 hover:bg-sky-50 focus-visible:ring-2 focus-visible:ring-sky-400"
+                aria-label="關閉主選單"
+                onClick={() => setOpen(false)}
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden><path fill="currentColor" d="M6.2 4.8 4.8 6.2 10.6 12l-5.8 5.8 1.4 1.4L12 13.4l5.8 5.8 1.4-1.4L13.4 12l5.8-5.8-1.4-1.4L12 10.6z"/></svg>
+              </button>
+            </div>
+            <div className="mt-2 pb-3">
+              <NavLinks onClick={() => setOpen(false)} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
+
 // ============================
 // Main component
 // ============================
@@ -138,7 +218,8 @@ export default function OceanFamilyLanding({ data = siteData }) {
       style={{ fontFamily: '"Nunito", ui-sans-serif, system-ui' }}
     >
       {/* ===== Nav (translucent, stays same before/after scroll) ===== */}
-      <header className="sticky top-0 z-40 border-b border-sky-100/60 bg-white/80 backdrop-blur">
+      <HeaderBar />
+      {/* <header className="sticky top-0 z-40 border-b border-sky-100/60 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
           <a href="#home" className="flex items-center gap-3">
             <span className="w-12 place-items-center rounded-xl">
@@ -163,7 +244,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
             </a>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       {/* ===== Hero ===== */}
       <section id="home" className="relative overflow-hidden scroll-mt-24">
