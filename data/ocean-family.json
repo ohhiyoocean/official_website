@@ -3,7 +3,7 @@
     "title": "海洋家族 OCEAN FAMILY",
     "subtitle": "原本四位熱愛演出的好朋友們，在 2022 年有了一個大膽的想法。經過多次的討論及研究，「海洋家族」就此誕生了……\n每個人都身經百戰，並發揮所長。不侷限於兒童產業，海洋家族服務範疇將加深加廣，且創新多元，為更多企業、家庭帶來更專業服務。",
     "ctas": [
-      { "label": "觀看影片", "href": "#", "kind": "primary" },
+      { "label": "觀看影片", "href": "#video", "kind": "primary" },
       { "label": "聯絡我們", "href": "#contact", "kind": "accent" }
     ],
     "socials": [

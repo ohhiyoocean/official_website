@@ -349,7 +349,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
                   更多內容請見活動紀錄 / 詳細頁
                 </p>
                 <a
-                  href="#events"
+                  href={`#${s.key}`}
                   className="mt-4 inline-block text-sky-700 underline-offset-4 hover:underline"
                 >
                   查看活動紀錄 →
@@ -364,12 +364,13 @@ export default function OceanFamilyLanding({ data = siteData }) {
       <section id="events" className="scroll-mt-24 py-16 md:py-20">
         <div className="relative z-10 mx-auto max-w-6xl px-4">
           <SectionTitle
+            id="activities"
             title="活動紀錄"
             subtitle="族繁不及備載，持續更新"
           />
 
           {/* 2025 以前精選 */}
-          <div className="mt-10 rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-sky-100">
+          <div id="dance" className="scroll-mt-24 mt-10 rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-sky-100">
             <h3 className="text-xl font-bold text-sky-900">
               歡樂唱跳｜2025 年 7 月前
             </h3>
@@ -429,7 +430,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
           {/* 其他服務簡列 */}
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
             {/* 私人派對 */}
-            <div className="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-sky-100">
+            <div id="party" className="scroll-mt-24 rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-sky-100">
               <h3 className="text-lg font-bold text-sky-900">私人派對</h3>
               <ul className="mt-3 space-y-1">
                 {data.events.party.features.map((f, i) => (
@@ -444,7 +445,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
             </div>
 
             {/* 活動主持 */}
-            <div className="rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-sky-100">
+            <div id="hosting" className="scroll-mt-24 rounded-2xl bg-white/80 p-6 shadow-sm ring-1 ring-sky-100">
               <h3 className="text-lg font-bold text-sky-900">活動主持</h3>
               <ul className="mt-3 space-y-1 overflow-auto pr-2">
                 {data.events.hosting.list.map((f, i) => (
@@ -460,19 +461,19 @@ export default function OceanFamilyLanding({ data = siteData }) {
               <h3 className="text-lg font-bold text-sky-900">
                 人偶・影視・職人體驗
               </h3>
-              <p className="mt-2 text-sky-800/90">人偶見面會：</p>
+              <p id="mascot" className="scroll-mt-48 mt-2 text-sky-800/90">人偶見面會：</p>
               <ul className="ml-3 list-disc text-sky-800/90">
                 {data.events.mascot.list.map((m, i) => (
                   <li key={i}>{m}</li>
                 ))}
               </ul>
-              <p className="mt-3 text-sky-800/90">影視拍攝：</p>
+              <p id="media" className="scroll-mt-24 mt-3 text-sky-800/90">影視拍攝：</p>
               <ul className="ml-3 list-disc text-sky-800/90">
                 {data.events.media.list.map((m, i) => (
                   <li key={i}>{m}</li>
                 ))}
               </ul>
-              <p className="mt-3 text-sky-800/90">職人體驗：</p>
+              <p id="career" className="scroll-mt-24 mt-3 text-sky-800/90">職人體驗：</p>
               <p className="text-sm text-sky-700/80">
                 {data.events.career.tagline}
               </p>
