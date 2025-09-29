@@ -346,7 +346,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
               >
                 <h3 className="text-lg font-semibold text-sky-900">{s.name}</h3>
                 <p className="mt-2 text-sm text-sky-800/80">
-                  更多內容請見活動紀錄 / 詳細頁
+                  {s.content}
                 </p>
                 <a
                   href={`#${s.key}`}

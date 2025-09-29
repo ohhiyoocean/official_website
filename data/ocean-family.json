@@ -14,12 +14,12 @@
     ]
   },
   "services": [
-    { "name": "歡樂唱跳", "key": "dance" },
-    { "name": "私人派對", "key": "party" },
-    { "name": "活動主持", "key": "hosting" },
-    { "name": "人偶見面", "key": "mascot" },
-    { "name": "影視拍攝", "key": "media" },
-    { "name": "職人體驗", "key": "career" }
+    { "name": "歡樂唱跳", "key": "dance" ,"content":"原創金曲活力四射，熱鬧滿點！"},
+    { "name": "私人派對", "key": "party" ,"content":"大人放鬆，小孩Fun電！"},
+    { "name": "活動主持", "key": "hosting" ,"content":"全場流程我們掌握！"},
+    { "name": "人偶見面", "key": "mascot" ,"content":"多位卡通巨星現身活動現場！"},
+    { "name": "影視拍攝", "key": "media" ,"content":"形象廣告、兒童節目、動態教材拍攝"},
+    { "name": "職人體驗", "key": "career" ,"content":"結合企業特色規劃與執行體驗活動"}
   ],
   "events": {
     "dance": {
