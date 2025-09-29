@@ -235,10 +235,10 @@
   "partners": ["前東森幼幼台西瓜哥哥", "小岳哥哥"],
   "contact": {
     "items": [
-      { "label": "YouTube：海洋家族官方頻道", "href": "#" },
-      { "label": "Facebook：海洋家族臉書粉專", "href": "#" },
-      { "label": "Instagram：海洋家族 Instagram", "href": "#" },
-      { "label": "Email：OHHIYO.OCEAN@gmail.com", "href": "mailto:OHHIYO.OCEAN@gmail.com" }
+      { "icon":"YouTube.png","label": "海洋家族官方頻道", "href": "https://www.youtube.com/channel/UC-sWQo7oLPr1u3YzoTmBr7Q" },
+      { "icon":"Facebook.png","label": "海洋家族臉書粉專", "href": "https://www.facebook.com/ocean.family2025/" },
+      { "icon":"Instagram.png","label": "海洋家族 Instagram", "href": "https://www.instagram.com/ocean.family2022/" },
+      { "icon":"Email.png","label": "OHHIYO.OCEAN@gmail.com", "href": "mailto:OHHIYO.OCEAN@gmail.com" }
     ]
   }
 }

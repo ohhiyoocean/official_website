@@ -488,7 +488,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
       </section>
 
       {/* Videos */}
-      <section id="videos" className="">
+      <section id="video" className="">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <SectionTitle title="影音精選" subtitle="VIDEOS" icon={Youtube} />
           <div className="mt-4 grid gap-6 md:grid-cols-3">
