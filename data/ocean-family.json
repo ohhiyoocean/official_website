@@ -7,9 +7,9 @@
       { "label": "聯絡我們", "href": "#contact", "kind": "accent" }
     ],
     "socials": [
-      { "icon":"YouTube.png","label": "海洋家族官方頻道", "href": "#" },
-      { "icon":"Facebook.png","label": "海洋家族臉書粉專", "href": "#" },
-      { "icon":"Instagram.png","label": "海洋家族 Instagram", "href": "#" },
+      { "icon":"YouTube.png","label": "海洋家族官方頻道", "href": "https://www.youtube.com/channel/UC-sWQo7oLPr1u3YzoTmBr7Q" },
+      { "icon":"Facebook.png","label": "海洋家族臉書粉專", "href": "https://www.facebook.com/ocean.family2025/" },
+      { "icon":"Instagram.png","label": "海洋家族 Instagram", "href": "https://www.instagram.com/ocean.family2022/" },
       { "icon":"Email.png","label": "OHHIYO.OCEAN@gmail.com", "href": "mailto:OHHIYO.OCEAN@gmail.com" }
     ]
   },
