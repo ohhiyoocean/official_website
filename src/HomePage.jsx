@@ -219,33 +219,6 @@ export default function OceanFamilyLanding({ data = siteData }) {
     >
       {/* ===== Nav (translucent, stays same before/after scroll) ===== */}
       <HeaderBar />
-      {/* <header className="sticky top-0 z-40 border-b border-sky-100/60 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-          <a href="#home" className="flex items-center gap-3">
-            <span className="w-12 place-items-center rounded-xl">
-              <img src="assets/logo.png" alt="" />
-            </span>
-            <span className="text-lg font-extrabold tracking-tight text-sky-900">
-              海洋家族
-            </span>
-          </a>
-          <nav className="hidden gap-6 md:flex text-sky-800/90">
-            <a className="hover:text-sky-900" href="#services">
-              服務項目
-            </a>
-            <a className="hover:text-sky-900" href="#events">
-              活動紀錄
-            </a>
-            <a className="hover:text-sky-900" href="#hosts">
-              主持群
-            </a>
-            <a className="hover:text-sky-900" href="#contact">
-              聯絡我們
-            </a>
-          </nav>
-        </div>
-      </header> */}
-
       {/* ===== Hero ===== */}
       <section id="home" className="relative overflow-hidden scroll-mt-24">
         {/* background waves */}
@@ -328,14 +301,11 @@ export default function OceanFamilyLanding({ data = siteData }) {
                   href={s.href}
                   className="transition hover:scale-[1.02]"
                 >
-                  <Pill>
                     <img
-                      className="w-8 pr-2"
+                      className="w-12 pr-2"
                       src={`assets/icon/${s.icon}`}
                       alt=""
                     />
-                    {s.label}
-                  </Pill>
                 </a>
               ))}
             </div>
@@ -571,7 +541,7 @@ export default function OceanFamilyLanding({ data = siteData }) {
       {/* Videos */}
       <section id="video" className="">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-          <SectionTitle title="影音精選" subtitle="VIDEOS" icon={Youtube} />
+          <SectionTitle title="影片精選" />
           <div className="mt-4 grid gap-6 md:grid-cols-3">
             {[
               ["IUq5H7BQi-E", "海洋家族原創金曲"],
@@ -618,7 +588,10 @@ export default function OceanFamilyLanding({ data = siteData }) {
                 href={c.href}
                 className="rounded-xl border border-sky-200 bg-white/80 px-4 py-3 text-center text-sky-800/90 shadow-sm transition hover:shadow-md"
               >
-                {c.label}
+                <span className="inline-flex items-center gap-3">
+                  <img className="w-6" src={`assets/icon/${c.icon}`} alt="" />
+                  {c.label}
+                </span>
               </a>
             ))}
           </div>
